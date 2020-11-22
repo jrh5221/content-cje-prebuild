@@ -1,10 +1,10 @@
 FROM tomcat
 
-RUN mv /var/lib/tomcat/webapps/ROOT /var/lib/tomcat/webapps/OLDROOT
+RUN mv $CATALINA_BASE/webapps/ROOT $CATALINA_BASE/webapps/OLDROOT
 
-COPY ./index.jsp /var/lib/tomcat/webapps/ROOT.jsp
+COPY ./index.jsp $CATALINA_BASE/webapps/ROOT.jsp
 
 EXPOSE 8080
 
-CMD [ "tomcat", "start" ]
+CMD [ "catalina.sh", "start" ]
 
