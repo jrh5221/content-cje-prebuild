@@ -1,8 +1,6 @@
 FROM tomcat
 
-RUN mv /usr/local/tomcat/webapps/ROOT /usr/local/tomcat/webapps/OLDROOT
-
-ADD index.jsp /usr/local/tomcat/webapps/ROOT.jsp
+ADD index.jsp /usr/local/tomcat/webapps/
 
 EXPOSE 8080
 
