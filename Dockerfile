@@ -1,8 +1,10 @@
 FROM tomcat
 
-RUN mv /var/lib/tomcat9/webapps/ROOT /var/lib/tomcat9/webapps/OLDROOT
+RUN mv /var/lib/tomcat/webapps/ROOT /var/lib/tomcat/webapps/OLDROOT
 
-COPY ./index.jsp /var/lib/tomcat9/webapps/ROOT.jsp
+COPY ./index.jsp /var/lib/tomcat/webapps/ROOT.jsp
 
-EXPOSE 80
+EXPOSE 8080
+
+CMD [ "tomcat", "start" ]
 
